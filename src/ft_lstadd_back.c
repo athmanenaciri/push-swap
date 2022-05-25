@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/18 15:32:28 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/22 18:25:01 by anaciri          ###   ########.fr       */
+/*   Created: 2022/05/20 00:35:20 by anaciri           #+#    #+#             */
+/*   Updated: 2022/05/23 20:59:04 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
+
 typedef struct node
 {
 	int		data;
 	struct node	*next;
 }t_list;
 
-t_list	*ft_lstnew(int content)
+void	ft_lstadd_back(t_list	**lst, t_list	*new)
 {
-	t_list	*node;
+	t_list	*ptr;
 
-	node = malloc(sizeof(t_list));
-	if (node == NULL)
-		return (NULL);
-	node->data = content;
-	node->next = NULL;
-	return (node);
+	ptr = *lst;
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		while (ptr->next)
+			ptr = ptr->next;
+		ptr->next = new;
+	}
 }

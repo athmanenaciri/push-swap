@@ -1,16 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 02:14:21 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/22 18:25:55 by anaciri          ###   ########.fr       */
+/*   Created: 2022/05/20 00:26:40 by anaciri           #+#    #+#             */
+/*   Updated: 2022/05/23 20:58:54 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include<stdlib.h>
 
 typedef struct node
 {
@@ -18,9 +16,14 @@ typedef struct node
 	struct node	*next;
 }t_list;
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (del != NULL)
-		del(lst->data);
-	free(lst);
+	t_list	*ptr;
+
+	while (lst)
+	{
+		ptr = lst;
+		lst = lst->next;
+	}
+	return (ptr);
 }

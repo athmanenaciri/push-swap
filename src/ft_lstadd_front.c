@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 23:56:42 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/22 18:25:09 by anaciri          ###   ########.fr       */
+/*   Created: 2022/05/18 16:00:56 by anaciri           #+#    #+#             */
+/*   Updated: 2022/05/23 20:59:01 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,8 @@ typedef struct node
 	struct node	*next;
 }t_list;
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstadd_front(t_list	**lst, t_list	*new)
 {
-	int	counter;
-
-	counter = 0;
-	while (lst)
-	{
-		counter++;
-		lst = lst->next;
-	}
-	return (counter);
+	new->next = *lst;
+	*lst = new;
 }

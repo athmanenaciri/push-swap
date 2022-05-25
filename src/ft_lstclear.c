@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 00:26:40 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/22 18:24:54 by anaciri          ###   ########.fr       */
+/*   Created: 2022/05/20 13:39:48 by anaciri           #+#    #+#             */
+/*   Updated: 2022/05/23 20:58:58 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include<stdlib.h>
 
 typedef struct node
 {
@@ -16,15 +18,18 @@ typedef struct node
 	struct node	*next;
 }t_list;
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*ptr;
+	t_list	*next;
+	t_list	*cur;
 
-	while (lst)
+	cur = *lst;
+	while (cur)
 	{
-		ptr = lst;
-		lst = lst->next;
+		next = cur->next;
+		if (del != NULL)
+			del(cur->data);
+		free(cur);
+		cur = next;
 	}
-	return (ptr);
 }
-  

@@ -1,16 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 00:35:20 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/22 18:24:13 by anaciri          ###   ########.fr       */
+/*   Created: 2022/05/19 23:56:42 by anaciri           #+#    #+#             */
+/*   Updated: 2022/05/23 20:58:43 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include<stdlib.h>
 
 typedef struct node
 {
@@ -18,17 +16,15 @@ typedef struct node
 	struct node	*next;
 }t_list;
 
-void	ft_lstadd_back(t_list	**lst, t_list	*new)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*ptr;
+	int	counter;
 
-	ptr = *lst;
-	if (*lst == NULL)
-		*lst = new;
-	else
+	counter = 0;
+	while (lst)
 	{
-		while (ptr->next)
-			ptr = ptr->next;
-		ptr->next = new;
+		counter++;
+		lst = lst->next;
 	}
+	return (counter);
 }
