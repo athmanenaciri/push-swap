@@ -9,10 +9,12 @@ typedef struct node
 
 void    ft_swap_a(t_list    **stack_a)
 {
-    t_list  *node;
-
-    node = *stack_a;
-
-    *stack_a = (*stack_a)->next;
-    (*stack_a)->next = node;
+    int tmp;
+    if(*stack_a == NULL)
+        return ;
+    if((*stack_a)->next == NULL)
+        return ;
+    tmp = (*stack_a)->data;
+    (*stack_a)->data = (*stack_a)->next->data;
+    (*stack_a)->next->data = tmp;
 }
