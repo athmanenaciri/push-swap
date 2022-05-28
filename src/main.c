@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:15:04 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/27 12:48:18 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/05/28 21:48:06 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ typedef struct node
 {
 	int		data;
 	struct node	*next;
+	int	position;
 }t_list;
 
 
@@ -35,8 +36,8 @@ void    ft_r_rotate_b(t_list    **stack_b);
 void    ft_rotate_all(t_list    **stack_a, t_list   **stack_b);
 void    ft_r_rotate_all(t_list    **stack_a, t_list   **stack_b);
 void    ft_swap_all(t_list    **stack_a, t_list   **stack_b);
-
-
+void	ft_indexing(t_list	*satck_a, t_list	*node);
+void    ft_push_twenty(t_list   *stack_a, t_list    *stack_b);
 
 int main(int ac, char **av)
 {
@@ -77,6 +78,7 @@ int main(int ac, char **av)
 			return(1);
 		}
 		node = ft_lstnew(nbr);
+		ft_indexing(stack_a, node);
 		ft_lstadd_back(&stack_a, node);
 		
 		 while(current)
@@ -102,13 +104,14 @@ int main(int ac, char **av)
 	//ft_rotate_all(&stack_a, &stack_b);
 	//ft_r_rotate_all(&stack_a, &stack_b);
 	//ft_swap_all(&stack_a, &stack_b);
-	current = stack_b;
+	ft_push_twenty(stack_a, stack_b);
+	current = stack_a;
 	i = 1;
 	while(i < ac)
 	{
 		while(current)
 		{
-			printf("%d ", current->data);
+			printf("%d-(%d) ", current->data, current->position);
 			current = current->next;
 		}	
 		i++;
