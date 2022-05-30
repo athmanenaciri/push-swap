@@ -6,20 +6,20 @@
 #    By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/29 21:13:58 by anaciri           #+#    #+#              #
-#    Updated: 2022/05/30 16:47:46 by anaciri          ###   ########.fr        #
+#    Updated: 2022/05/30 23:48:05 by anaciri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 DBUILD = build
 FILES = main instra/ft_push_a instra/ft_r_rotate_all instra/ft_rotate_all \
 	instra/ft_swap_all instra/ft_push_b instra/ft_r_rotate_b instra/ft_rotate_b \
 	instra/ft_swap_b instra/ft_r_rotate_a instra/ft_rotate_a instra/ft_swap_a \
 	ft_atoi ft_lstadd_front ft_lstlast ft_push_twenty \
-	ft_indexing ft_lstnew ft_repeat \
-	ft_lstadd_back ft_lstsize \
+	ft_indexing ft_lstnew ft_repeat ft_lstadd_back \
+	ft_lstsize ft_push_another \
 
 OBJS = $(addprefix $(DBUILD)/, $(FILES:=.o))
 

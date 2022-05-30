@@ -6,11 +6,10 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:15:04 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/30 16:50:32 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/05/30 23:48:47 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "push_swap.h"
 
 int main(int ac, char **av)
@@ -66,7 +65,7 @@ int main(int ac, char **av)
 	if(ft_repeat(stack_a) == 1)
 	{
 		printf("Error");
-		return(1);
+		return(1);	
 	}
 	// ft_push_b(&stack_a, &stack_b);
 	// ft_push_a(&stack_a, &stack_b);
@@ -79,15 +78,16 @@ int main(int ac, char **av)
 	//ft_rotate_all(&stack_a, &stack_b);
 	//ft_r_rotate_all(&stack_a, &stack_b);
 	//ft_swap_all(&stack_a, &stack_b);
-	ft_push_twenty(stack_a, stack_b);
+	//ft_push_twenty(&stack_a, &stack_b);
+	ft_push_another(&stack_a, &stack_b);
 	
-	 current = stack_a;
+	 current = stack_b;
 	 i = 1;
 	 while(i < ac)
 	{
 		while(current)
 		{
-			printf("%d-(%d) ", current->data);
+			printf("%d\n", current->data);
 			current = current->next; 
 		}	
 		i++;
