@@ -1,13 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_repeat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/30 16:57:26 by anaciri           #+#    #+#             */
+/*   Updated: 2022/05/30 16:57:29 by anaciri          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include<stdlib.h>
-#include<stdio.h>
-
-typedef struct node
-{
-	int		data;
-	struct node	*next;
-}t_list;
-
+#include"push_swap.h"
 
 int ft_check(int val, t_list *node)
 {

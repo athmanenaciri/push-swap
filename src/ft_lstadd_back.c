@@ -6,19 +6,14 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 00:35:20 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/26 14:34:05 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/05/30 16:37:51 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
+#include "push_swap.h"
 
-typedef struct node
-{
-	int		data;
-	struct node	*next;
-}t_list;
-
-void	ft_lstadd_back(t_list	**lst, t_list	*new)
+void	ft_lstadd_back(t_list **lst, t_list	*new)
 {
 	t_list	*ptr;
 

@@ -6,11 +6,11 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 02:14:21 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/23 20:58:56 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/05/30 16:56:57 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
+#include"push_swap.h"
 
 typedef struct node
 {

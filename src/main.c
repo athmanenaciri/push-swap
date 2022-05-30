@@ -6,38 +6,12 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:15:04 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/28 21:48:06 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/05/30 16:50:32 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-
-typedef struct node
-{
-	int		data;
-	struct node	*next;
-	int	position;
-}t_list;
-
-
-int ft_atoi(char *str, int *nbr);
-t_list	*ft_lstnew(int	content);
-void	ft_lstadd_back(t_list	**lst, t_list	*new);
-void	ft_lstadd_front(t_list	**lst, t_list	*new);
-int    ft_repeat(t_list *head);
-void    ft_push_b(t_list **stack_a, t_list **stack_b);
-void    ft_push_a(t_list **stack_a, t_list **stack_b);
-void    ft_swap_a(t_list    **stack_a);
-void    ft_swap_b(t_list    **stack_b);
-void    ft_rotate_a(t_list  **stack_a);
-void    ft_rotate_b(t_list  **stack_b);
-void    ft_r_rotate_a(t_list    **stack_a);
-void    ft_r_rotate_b(t_list    **stack_b);
-void    ft_rotate_all(t_list    **stack_a, t_list   **stack_b);
-void    ft_r_rotate_all(t_list    **stack_a, t_list   **stack_b);
-void    ft_swap_all(t_list    **stack_a, t_list   **stack_b);
-void	ft_indexing(t_list	*satck_a, t_list	*node);
-void    ft_push_twenty(t_list   *stack_a, t_list    *stack_b);
+#include <stdio.h>
+#include "push_swap.h"
 
 int main(int ac, char **av)
 {
@@ -69,7 +43,7 @@ int main(int ac, char **av)
 	i = 1;
 	stack_a = NULL;
 	stack_b = NULL;
-	current = stack_a;
+	current =  stack_a;
 	while(i < ac)
 	{
 		if(ft_atoi(av[i], &nbr) == 1)
@@ -80,14 +54,15 @@ int main(int ac, char **av)
 		node = ft_lstnew(nbr);
 		ft_indexing(stack_a, node);
 		ft_lstadd_back(&stack_a, node);
-		
-		 while(current)
-		{
-			printf("%d ", current->data);
-			current = current->next;
-		}		
 		i++;
 	}
+	// i = 1;
+	// current = stack_a;
+	// while (current)
+	// {
+	// 	printf("%d\t%d\n", current->data, current->position);
+	// 	current = current->next;
+	// }
 	if(ft_repeat(stack_a) == 1)
 	{
 		printf("Error");
@@ -105,17 +80,19 @@ int main(int ac, char **av)
 	//ft_r_rotate_all(&stack_a, &stack_b);
 	//ft_swap_all(&stack_a, &stack_b);
 	ft_push_twenty(stack_a, stack_b);
-	current = stack_a;
-	i = 1;
-	while(i < ac)
+	
+	 current = stack_a;
+	 i = 1;
+	 while(i < ac)
 	{
 		while(current)
 		{
-			printf("%d-(%d) ", current->data, current->position);
-			current = current->next;
+			printf("%d-(%d) ", current->data);
+			current = current->next; 
 		}	
 		i++;
 	}
+	
 	// if (stack_a)
 	// 	printf("%d ", stack_a->data);
 		

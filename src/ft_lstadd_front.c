@@ -6,15 +6,11 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:00:56 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/23 20:59:01 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/05/30 16:56:39 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef struct node
-{
-	int		data;
-	struct node	*next;
-}t_list;
+#include"push_swap.h"
 
 void	ft_lstadd_front(t_list	**lst, t_list	*new)
 {

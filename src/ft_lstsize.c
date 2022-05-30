@@ -6,15 +6,11 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 23:56:42 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/23 20:58:43 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/05/30 16:57:09 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef struct node
-{
-	int		data;
-	struct node	*next;
-}t_list;
+#include"push_swap.h"
 
 int	ft_lstsize(t_list *lst)
 {

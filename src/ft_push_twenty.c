@@ -1,14 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_push_twenty.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/30 16:48:36 by anaciri           #+#    #+#             */
+/*   Updated: 2022/05/30 16:48:37 by anaciri          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include<stdio.h>
-
-typedef struct node
-{
-	int		data;
-	struct node	*next;
-	int	position;
-}t_list;
-
-int     ft_lstsize(t_list *lst);
-void    ft_push_b(t_list **stack_a, t_list **stack_b);
+#include "push_swap.h"
 
 void    ft_push_twenty(t_list   *stack_a, t_list    *stack_b)
 {
