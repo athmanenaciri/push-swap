@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 16:36:20 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/30 23:47:38 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/05/31 19:50:13 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 # include<stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 typedef struct node
 {
@@ -41,8 +42,8 @@ void    ft_r_rotate_all(t_list    **stack_a, t_list   **stack_b);
 void    ft_swap_all(t_list    **stack_a, t_list   **stack_b);
 void	ft_indexing(t_list	*satck_a, t_list	*node);
 t_list	*ft_lstlast(t_list *lst);
-void    ft_push_twenty(t_list   **stack_a, t_list    **stack_b);
+void    ft_push_twenty(t_list **stack_a, t_list **stack_b, int max, int chunk);
 int	ft_lstsize(t_list *lst);
-void    ft_push_another(t_list   **stack_a, t_list    **stack_b);
+void    ft_push_another(t_list   **stack_a, t_list    **stack_b, int div);
 
 #endif

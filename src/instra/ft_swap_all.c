@@ -5,4 +5,5 @@ void    ft_swap_all(t_list    **stack_a, t_list   **stack_b)
 {
     ft_swap_a(stack_a);
     ft_swap_b(stack_b);
+    write(1, "ss\n", 3);
 }

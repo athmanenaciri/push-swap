@@ -13,6 +13,7 @@ void    ft_push_a(t_list **stack_a, t_list **stack_b)
 	(*stack_b)->next = *stack_a;
 	*stack_a = *stack_b;
 	*stack_b = node;
+	write(1, "pa\n", 3);
 
 	// if((*stack_b) != NULL)
 	// {

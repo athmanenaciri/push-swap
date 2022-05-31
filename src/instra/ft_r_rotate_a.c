@@ -18,4 +18,5 @@ void    ft_r_rotate_a(t_list    **stack_a)
     *stack_a = node;
     current = ft_lstlast(*stack_a);
     current->next = NULL;
+    write(1, "ra\n", 3);
 }

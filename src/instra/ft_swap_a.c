@@ -11,4 +11,5 @@ void    ft_swap_a(t_list    **stack_a)
     tmp = (*stack_a)->data;
     (*stack_a)->data = (*stack_a)->next->data;
     (*stack_a)->next->data = tmp;
+    write(1, "sa\n", 3);
 }

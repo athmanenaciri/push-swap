@@ -11,4 +11,5 @@ void    ft_swap_b(t_list    **stack_b)
     tmp = (*stack_b)->data;
     (*stack_b)->data = (*stack_b)->next->data;
     (*stack_b)->next->data = tmp;
+    write(1, "sb\n", 3);
  }
