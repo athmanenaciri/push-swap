@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:15:04 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/31 19:51:14 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/01 00:58:19 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int main(int ac, char **av)
 	//ft_swap_all(&stack_a, &stack_b);
 	//ft_push_twenty(&stack_a, &stack_b);
 	ft_push_another(&stack_a, &stack_b, 5);
-	
+	ft_push_original(&stack_a, &stack_b);
 	 current = stack_b;
 	//  i = 1;
 	//  while(i < ac)

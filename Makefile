@@ -6,7 +6,7 @@
 #    By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/29 21:13:58 by anaciri           #+#    #+#              #
-#    Updated: 2022/05/30 23:48:05 by anaciri          ###   ########.fr        #
+#    Updated: 2022/06/01 00:09:26 by anaciri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ FILES = main instra/ft_push_a instra/ft_r_rotate_all instra/ft_rotate_all \
 	instra/ft_swap_b instra/ft_r_rotate_a instra/ft_rotate_a instra/ft_swap_a \
 	ft_atoi ft_lstadd_front ft_lstlast ft_push_twenty \
 	ft_indexing ft_lstnew ft_repeat ft_lstadd_back \
-	ft_lstsize ft_push_another \
+	ft_lstsize ft_push_another ft_push_original \
 
 OBJS = $(addprefix $(DBUILD)/, $(FILES:=.o))
 

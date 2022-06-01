@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 16:36:20 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/31 19:50:13 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/01 00:58:26 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ t_list	*ft_lstlast(t_list *lst);
 void    ft_push_twenty(t_list **stack_a, t_list **stack_b, int max, int chunk);
 int	ft_lstsize(t_list *lst);
 void    ft_push_another(t_list   **stack_a, t_list    **stack_b, int div);
+void	ft_push_original(t_list	**stack_a, t_list	**stack_b);
 
 #endif
