@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:15:04 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/01 00:58:19 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/02 22:48:02 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ int main(int ac, char **av)
 {
 	int i;
 	int nbr;
+	int size;
 	t_list	*stack_a;
 	t_list	*node;
 	t_list	*current;
 	t_list	*stack_b;
 
 	i = 1;
+
 
 	if (ac == 1)
 	{
@@ -55,18 +57,17 @@ int main(int ac, char **av)
 		ft_lstadd_back(&stack_a, node);
 		i++;
 	}
-	// i = 1;
-	// current = stack_a;
-	// while (current)
-	// {
-	// 	printf("%d\t%d\n", current->data, current->position);
-	// 	current = current->next;
-	// }
 	if(ft_repeat(stack_a) == 1)
 	{
 		printf("Error");
 		return(1);	
 	}
+	if(ft_if_sorted(stack_a) == 1)
+	{
+		printf("Sorted");
+		return(1);	
+	}
+	
 	// ft_push_b(&stack_a, &stack_b);
 	// ft_push_a(&stack_a, &stack_b);
 	//ft_swap_a(&stack_a);
@@ -79,9 +80,31 @@ int main(int ac, char **av)
 	//ft_r_rotate_all(&stack_a, &stack_b);
 	//ft_swap_all(&stack_a, &stack_b);
 	//ft_push_twenty(&stack_a, &stack_b);
-	ft_push_another(&stack_a, &stack_b, 5);
-	ft_push_original(&stack_a, &stack_b);
-	 current = stack_b;
+	
+	size = ft_lstsize(stack_a);
+	if (size == 3)
+		ft_push_three(&stack_a);
+	else if (size == 5)
+		ft_push_five(&stack_a, &stack_a);
+	else if(size < 200)
+		ft_push_another(&stack_a, &stack_b, 5);
+	else
+		ft_push_another(&stack_a, &stack_b, 10);
+	//ft_push_original(&stack_a, &stack_b);
+	
+	//ft_if_sorted(stack_a);
+	current = stack_a;
+	 i = 1;
+	 while(i < ac)
+	{
+		while(current)
+		{
+			printf("%d\n", current->data);
+			current = current->next; 
+		}	
+		i++;
+	}
+	// current = stack_b;
 	//  i = 1;
 	//  while(i < ac)
 	// {

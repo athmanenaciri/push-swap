@@ -1,21 +1,6 @@
 #include<stdio.h>
 #include"push_swap.h"
 
-t_list	*ft_before_last(t_list	*stack_b)
-{
-	t_list	*prev;
-
-	if (stack_b == NULL)
-		return (stack_b);
-	prev = stack_b;
-	while(stack_b->next)
-	{
-		prev = stack_b;
-		stack_b = stack_b->next;
-	}
-	return (prev);
-}
-
 void    ft_r_rotate_b(t_list    **stack_b)
 {
     t_list  *node;

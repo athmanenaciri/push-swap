@@ -12,11 +12,9 @@ void    ft_r_rotate_a(t_list    **stack_a)
         return ;
     if((*stack_a)->next == NULL)
         return ;
-    node = ft_lstlast(*stack_a);
-    node->next = *stack_a;
-    (*stack_a)->next = NULL;
-    *stack_a = node;
-    current = ft_lstlast(*stack_a);
-    current->next = NULL;
-    write(1, "ra\n", 3);
+    node = ft_before_last(*stack_a);
+    node->next->next = *stack_a;
+	*stack_a = node->next;
+	node->next = NULL;
+    write(1, "rra\n", 4);
 }

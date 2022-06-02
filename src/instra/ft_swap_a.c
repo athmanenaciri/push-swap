@@ -8,8 +8,8 @@ void    ft_swap_a(t_list    **stack_a)
         return ;
     if((*stack_a)->next == NULL)
         return ;
-    tmp = (*stack_a)->data;
-    (*stack_a)->data = (*stack_a)->next->data;
-    (*stack_a)->next->data = tmp;
+    tmp = (*stack_a)->position;
+    (*stack_a)->position = (*stack_a)->next->position;
+    (*stack_a)->next->position = tmp;
     write(1, "sa\n", 3);
 }
