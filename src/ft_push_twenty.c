@@ -6,12 +6,10 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 16:48:36 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/31 19:45:16 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/03 14:05:12 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include<stdio.h>
 #include "push_swap.h"
 
 void    ft_push_twenty(t_list **stack_a, t_list **stack_b, int max, int chunk)

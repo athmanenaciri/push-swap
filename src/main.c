@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:15:04 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/02 22:48:02 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/03 17:34:45 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,17 +82,33 @@ int main(int ac, char **av)
 	//ft_push_twenty(&stack_a, &stack_b);
 	
 	size = ft_lstsize(stack_a);
-	if (size == 3)
-		ft_push_three(&stack_a);
-	else if (size == 5)
-		ft_push_five(&stack_a, &stack_a);
-	else if(size < 200)
+	//if (size == 3)
+		//ft_push_three(&stack_a);
+	if (size < 6)
+		ft_push_five(&stack_a, &stack_b);
+	else if (size < 200)
 		ft_push_another(&stack_a, &stack_b, 5);
 	else
 		ft_push_another(&stack_a, &stack_b, 10);
-	//ft_push_original(&stack_a, &stack_b);
+	ft_push_original(&stack_a, &stack_b);
+	
 	
 	//ft_if_sorted(stack_a);
+
+	
+	current = stack_b;
+	 i = 1;
+	 while(i < ac)
+	{
+		while(current)
+		{
+			printf("%d\n", current->data);
+			current = current->next; 
+		}	
+		i++;
+	}
+
+	
 	current = stack_a;
 	 i = 1;
 	 while(i < ac)
@@ -104,17 +120,6 @@ int main(int ac, char **av)
 		}	
 		i++;
 	}
-	// current = stack_b;
-	//  i = 1;
-	//  while(i < ac)
-	// {
-	// 	while(current)
-	// 	{
-	// 		printf("%d\n", current->data);
-	// 		current = current->next; 
-	// 	}	
-	// 	i++;
-	// }
 	
 	// if (stack_a)
 	// 	printf("%d ", stack_a->data);
