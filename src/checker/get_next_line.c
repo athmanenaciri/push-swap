@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 13:29:52 by anaciri           #+#    #+#             */
-/*   Updated: 2022/01/17 15:25:18 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/05 23:57:11 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	*get_next_line(int fd)
 {
 	static char	*file_line;
 	char		*o_line;
-
+	
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	file_line = read_buff_size(fd, file_line);

@@ -6,11 +6,12 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:15:04 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/05 22:31:45 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/05 23:44:12 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "get_next_line.h"
 
 int	ft_norm1(int *ac, char **av)
 {
@@ -89,27 +90,27 @@ void	false(void)
 }
 void	instra(char *inp, t_list **stack_a, t_list **stack_b)
 {
-	if(strcmp(inp, "rr"))
+	if(ft_strcmp(inp, "rr"))
 		return(ft_rotate_all(stack_a, stack_b));
-	else if(strcmp(inp, "rrr"))
+	else if(ft_strcmp(inp, "rrr"))
 		return(ft_r_rotate_all(stack_a, stack_b));
-	else if(strcmp(inp, "ss"))
+	else if(ft_strcmp(inp, "ss"))
 		return(ft_swap_all(stack_a, stack_b));
-	else if(strcmp(inp, "pa"))
+	else if(ft_strcmp(inp, "pa"))
 		return(ft_push_a(stack_a, stack_b));
-	else if(strcmp(inp, "pb"))
+	else if(ft_strcmp(inp, "pb"))
 		return(ft_push_b(stack_a, stack_b));
-	else if(strcmp(inp, "ra"))
+	else if(ft_strcmp(inp, "ra"))
 		return(ft_rotate_a(stack_a));
-	else if(strcmp(inp, "rra"))
+	else if(ft_strcmp(inp, "rra"))
 		return(ft_r_rotate_a(stack_a));
-	else if(strcmp(inp, "rb"))
+	else if(ft_strcmp(inp, "rb"))
 		return(ft_rotate_b(stack_b));
-	else if(strcmp(inp, "rrb"))
+	else if(ft_strcmp(inp, "rrb"))
 		return(ft_r_rotate_b(stack_b));
-	else if(strcmp(inp, "sa"))
+	else if(ft_strcmp(inp, "sa"))
 		return(ft_swap_a(stack_a));
-	else if(strcmp(inp, "sb"))
+	else if(ft_strcmp(inp, "sb"))
 		return(ft_swap_b(stack_b));
 	else
 		return(false());
@@ -125,14 +126,13 @@ void	execute(t_list **stack_a, t_list **stack_b)
 		inp = get_next_line(0);
 		if(inp == NULL)
 			break ;
-		instra(inp, *stack_a, *stack_b);
+		instra(inp, stack_a, stack_b);
 	}
 }
 int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	char	*str;
 	int		nbr;
 	int		i;
 
