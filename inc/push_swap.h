@@ -6,14 +6,14 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 16:36:20 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/04 18:01:25 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/05 22:40:17 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
+# ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <stdlib.h>
-#include<stdio.h>
+# include <stdio.h>
 # include <unistd.h>
 
 typedef struct node
