@@ -6,25 +6,26 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:21:06 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/03 16:26:19 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/04 02:28:53 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "push_swap.h"
 
-void	ft_push_three(t_list	**stack_a, int start)
+void	ft_push_three(t_list **stack_a, int start)
 {
-	if((*stack_a)->position == start + 1 && (*stack_a)->next->position == start + 0)
+	if ((*stack_a)->position == start + 1
+		&& (*stack_a)->next->position == start + 0)
 	{
 		ft_swap_a(stack_a);
 	}
-	else if ((*stack_a)->position == start + 2 && (*stack_a)->next->position == start + 0)
+	else if ((*stack_a)->position == start + 2
+		&& (*stack_a)->next->position == start + 0)
 	{
 		ft_rotate_a(stack_a);
 	}
-	else if((*stack_a)->position == start + 1 && (*stack_a)->next->position == start + 2)
+	else if ((*stack_a)->position == start + 1
+		&& (*stack_a)->next->position == start + 2)
 	{
 		ft_r_rotate_a(stack_a);
 	}

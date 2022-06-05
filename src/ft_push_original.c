@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:08:14 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/03 17:32:46 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/04 02:27:10 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	ft_find_big(t_list *stack_b, int *ptr)
 {
-	int	i, j;
+	int	i;
+	int	j;
 	int	index;
 
 	i = 0;
@@ -34,15 +35,15 @@ int	ft_find_big(t_list *stack_b, int *ptr)
 	return (i);
 }
 
-void	ft_push_original(t_list	**stack_a, t_list	**stack_b)
+void	ft_push_original(t_list **stack_a, t_list **stack_b)
 {
-    int i;
+	int	i;
 	int	index;
 
-    i = 0;
-    while(ft_lstsize(*stack_b))
-    {
-        i = ft_find_big(*stack_b, &index);
+	i = 0;
+	while (ft_lstsize(*stack_b))
+	{
+		i = ft_find_big(*stack_b, &index);
 		while ((*stack_b)->position != index)
 		{
 			if (i < ft_lstsize(*stack_b) / 2)
@@ -53,5 +54,5 @@ void	ft_push_original(t_list	**stack_a, t_list	**stack_b)
 				ft_r_rotate_b(stack_b);
 		}
 		ft_push_a(stack_a, stack_b);
-    }
+	}
 }

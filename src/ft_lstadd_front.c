@@ -6,13 +6,13 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:00:56 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/30 16:56:39 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/04 02:20:24 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-void	ft_lstadd_front(t_list	**lst, t_list	*new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	new->next = *lst;
 	*lst = new;

@@ -6,14 +6,13 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 00:35:20 by anaciri           #+#    #+#             */
-/*   Updated: 2022/05/30 16:37:51 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/04 02:19:56 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list	*new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*ptr;
 
@@ -22,7 +21,7 @@ void	ft_lstadd_back(t_list **lst, t_list	*new)
 		*lst = new;
 	else
 	{
-		if(ptr == NULL)
+		if (ptr == NULL)
 			return ;
 		while (ptr->next)
 			ptr = ptr->next;
