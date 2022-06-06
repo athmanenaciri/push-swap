@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 13:29:52 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/05 23:57:11 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/06 00:31:35 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*read_buff_size(int fd, char *lines)
 	bufer = malloc(BUFFER_SIZE + 1);
 	if (bufer == NULL)
 		return (NULL);
-	while (i && (ft_strchr(lines, '\n')) == '\0')
+	while (i && (ft_strchr(lines, '\n')) == NULL)
 	{
 		i = read(fd, bufer, BUFFER_SIZE);
 		if (i == -1)

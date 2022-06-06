@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:15:04 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/05 23:44:12 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/06 02:08:59 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ int	ft_norm3(t_list **stack_a)
 		write (1, "Error", 5);
 		return (1);
 	}
-	if (ft_if_sorted(*stack_a) == 1)
-		return (1);
 	return (0);
 }
 
@@ -75,7 +73,7 @@ int	ft_strcmp(char *str1, char *str2)
 	i = 0;
 	if(str1 == NULL)
 		return (1);
-	while(str1)
+	while(str1[i])
 	{
 		if(str1[i] == str2[i])
 			i++;
@@ -84,50 +82,54 @@ int	ft_strcmp(char *str1, char *str2)
 	}
 	return (0);
 }
-void	false(void)
+
+int	false(void)
 {
-	write(1, "Error", 5);
+	write(2, "Error", 5);
+	return(1);
 }
-void	instra(char *inp, t_list **stack_a, t_list **stack_b)
+
+int	instra(char *inp, t_list **stack_a, t_list **stack_b)
 {
-	if(ft_strcmp(inp, "rr"))
-		return(ft_rotate_all(stack_a, stack_b));
-	else if(ft_strcmp(inp, "rrr"))
-		return(ft_r_rotate_all(stack_a, stack_b));
-	else if(ft_strcmp(inp, "ss"))
-		return(ft_swap_all(stack_a, stack_b));
-	else if(ft_strcmp(inp, "pa"))
-		return(ft_push_a(stack_a, stack_b));
-	else if(ft_strcmp(inp, "pb"))
-		return(ft_push_b(stack_a, stack_b));
-	else if(ft_strcmp(inp, "ra"))
-		return(ft_rotate_a(stack_a));
-	else if(ft_strcmp(inp, "rra"))
-		return(ft_r_rotate_a(stack_a));
-	else if(ft_strcmp(inp, "rb"))
-		return(ft_rotate_b(stack_b));
-	else if(ft_strcmp(inp, "rrb"))
-		return(ft_r_rotate_b(stack_b));
-	else if(ft_strcmp(inp, "sa"))
-		return(ft_swap_a(stack_a));
-	else if(ft_strcmp(inp, "sb"))
-		return(ft_swap_b(stack_b));
+	if(ft_strcmp(inp, "rr\n") == 0)
+		return(ft_rotate_all(stack_a, stack_b), 1);
+	else if(ft_strcmp(inp, "rrr\n") == 0)
+		return(ft_r_rotate_all(stack_a, stack_b), 1);
+	else if(ft_strcmp(inp, "ss\n") == 0)
+		return(ft_swap_all(stack_a, stack_b), 1);
+	else if(ft_strcmp(inp, "pa\n") == 0)
+		return(ft_push_a(stack_a, stack_b), 1);
+	else if(ft_strcmp(inp, "pb\n") == 0)
+		return(ft_push_b(stack_a, stack_b), 1);
+	else if(ft_strcmp(inp, "ra\n") == 0)
+		return(ft_rotate_a(stack_a), 1);
+	else if(ft_strcmp(inp, "rra\n") == 0)
+		return(ft_r_rotate_a(stack_a), 1);
+	else if(ft_strcmp(inp, "rb\n") == 0)
+		return(ft_rotate_b(stack_b), 1);
+	else if(ft_strcmp(inp, "rrb\n") == 0)
+		return(ft_r_rotate_b(stack_b), 1);
+	else if(ft_strcmp(inp, "sa\n") == 0)
+		return(ft_swap_a(stack_a), 1);
+	else if(ft_strcmp(inp, "sb\n") == 0)
+		return(ft_swap_b(stack_b), 1);
 	else
-		return(false());
+		return(false(), 0);
 }
-void	execute(t_list **stack_a, t_list **stack_b)
+int	execute(t_list **stack_a, t_list **stack_b)
 {
 	char	*inp;
-	int i;
 	
-	i = 0;
 	while (1)
 	{
 		inp = get_next_line(0);
 		if(inp == NULL)
 			break ;
-		instra(inp, stack_a, stack_b);
+		if(instra(inp, stack_a, stack_b) == 0)
+			return(free(inp), 1);
+		free(inp);
 	}
+	return(0);
 }
 int	main(int ac, char **av)
 {
@@ -148,4 +150,8 @@ int	main(int ac, char **av)
 	if (i == 1)
 		return (1);
 	execute(&stack_a, &stack_b);
+	if(ft_if_sorted_bonus(stack_a, stack_b) == 1)
+		write(1, "OK", 2);
+	else
+		write(1, "KO", 2);
 }

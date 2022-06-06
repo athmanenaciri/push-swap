@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 16:36:20 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/05 22:40:17 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/06 02:20:50 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+# include "get_next_line.h"
 
 typedef struct node
 {
@@ -40,12 +41,14 @@ void	ft_rotate_all(t_list **stack_a, t_list **stack_b);
 void	ft_r_rotate_all(t_list **stack_a, t_list **stack_b);
 void	ft_swap_all(t_list **stack_a, t_list **stack_b);
 void	ft_indexing(t_list *satck_a, t_list *node);
+void	ft_lstclear(t_list **lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_push_twenty(t_list **stack_a, t_list **stack_b, int max, int chunk);
 int		ft_lstsize(t_list *lst);
 void	ft_push_another(t_list **stack_a, t_list **stack_b, int div);
 void	ft_push_original(t_list	**stack_a, t_list **stack_b);
 int		ft_if_sorted(t_list *stack_a);
+int		ft_if_sorted_bonus(t_list *stack_a, t_list *stack_b);
 void	ft_push_three(t_list **stack_a, int start);
 t_list	*ft_before_last(t_list *stack);
 void	ft_push_five(t_list **stack_a, t_list **stack_b);

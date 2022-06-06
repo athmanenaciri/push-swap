@@ -6,21 +6,11 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 13:30:25 by anaciri           #+#    #+#             */
-/*   Updated: 2022/01/17 14:01:13 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/06 00:32:47 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 char	*ft_strchr(const char *s, int c)
 {
