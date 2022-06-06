@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 13:31:30 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/06 02:06:39 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/06 02:25:49 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_strlen(const char *str);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strjoin(char *s1, char *s2);
-char	*ft_substr(char *s, unsigned int start, size_t len);
+char	*ft_substr(char *s, int start, int len);
 char	*read_buff_size(int fd, char *lines);
 char	*one_line(char *lines);
 char	*lines_rest(char *file_line);

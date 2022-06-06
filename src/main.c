@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:15:04 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/06 02:17:53 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/06 02:29:27 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ int	ft_norm3(t_list **stack_a)
 		write (1, "Error", 5);
 		return (1);
 	}
-	if (ft_if_sorted(*stack_a) == 1)
-		return (1);
 	return (0);
 }
 
@@ -88,10 +86,12 @@ int	main(int ac, char **av)
 	stack_b = NULL;
 	if(ft_norm1(&ac, av) || ft_norm2(&ac, av, &nbr, &stack_a) || ft_norm3(&stack_a))
 	{
-		ft_lstclear(&stack_a, NULL);
-		ft_lstclear(&stack_b, NULL);
+		ft_lstclear(&stack_a);
+		ft_lstclear(&stack_b);
 		return (1);
 	}
+	if (ft_if_sorted(stack_a) == 1)
+		return (0);
 	// i = ft_norm1(&ac, av);
 	// if (i == 1)
 	// 	return (1);
