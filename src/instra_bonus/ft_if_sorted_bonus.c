@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 02:08:00 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/06 02:08:01 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/06 03:49:45 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_if_sorted_bonus(t_list *stack_a, t_list *stack_b)
 		i++;
 		current = current->next;
 	}
-	if(stack_b != NULL)
-		return(0);
+	if (stack_b != NULL)
+		return (0);
 	return (1);
 }

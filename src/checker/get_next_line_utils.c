@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 13:30:25 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/06 02:24:25 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/06 03:54:13 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char	*ft_strjoin(char *s1, char *s2)
 char	*ft_substr(char *s, int start, int len)
 {
 	char	*p;
-	int	i;
+	int		i;
 
 	if (s == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 #    By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/29 21:13:58 by anaciri           #+#    #+#              #
-#    Updated: 2022/06/06 02:15:44 by anaciri          ###   ########.fr        #
+#    Updated: 2022/06/06 04:02:48 by anaciri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ FILES = main instra/ft_push_a instra/ft_r_rotate_all instra/ft_rotate_all \
 	ft_lstsize ft_push_another ft_push_original ft_if_sorted\
 	ft_push_three ft_before_last ft_push_five ft_lstclear\
 
-FILES_BONUS = checker/main checker/get_next_line_utils checker/get_next_line instra_bonus/ft_push_a instra_bonus/ft_r_rotate_all \
+FILES_BONUS = checker/main checker/exec checker/get_next_line_utils checker/get_next_line instra_bonus/ft_push_a instra_bonus/ft_r_rotate_all \
 	instra_bonus/ft_rotate_all instra_bonus/ft_swap_all instra_bonus/ft_push_b instra_bonus/ft_r_rotate_b instra_bonus/ft_rotate_b \
 	instra_bonus/ft_swap_b instra_bonus/ft_r_rotate_a instra_bonus/ft_rotate_a instra_bonus/ft_swap_a ft_atoi \
 	ft_lstadd_front ft_lstlast ft_indexing ft_lstnew \

@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 16:38:11 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/04 18:03:49 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/06 03:55:54 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,21 @@ int	ft_check_it(char *str, int *sign)
 	}
 	return (0);
 }
+
 int	check_edges(long n)
 {
-	if(n < -2147483648)
+	if (n < -2147483648)
 		return (1);
-	else if(n > 2147483647)
+	else if (n > 2147483647)
 		return (1);
 	else
 		return (0);
 }
+
 int	ft_atoi(char *str, int *nbr)
 {
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
 	long	res;
 
 	sign = -1;

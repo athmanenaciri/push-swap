@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:15:04 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/06 02:29:27 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/06 03:53:10 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,8 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if(ft_norm1(&ac, av) || ft_norm2(&ac, av, &nbr, &stack_a) || ft_norm3(&stack_a))
+	if (ft_norm1(&ac, av)
+		|| ft_norm2(&ac, av, &nbr, &stack_a) || ft_norm3(&stack_a))
 	{
 		ft_lstclear(&stack_a);
 		ft_lstclear(&stack_b);
@@ -92,29 +93,7 @@ int	main(int ac, char **av)
 	}
 	if (ft_if_sorted(stack_a) == 1)
 		return (0);
-	// i = ft_norm1(&ac, av);
-	// if (i == 1)
-	// 	return (1);
-	// i = ft_norm2(&ac, av, &nbr, &stack_a);
-	// if (i == 1)
-	// 	return (1);
-	// i = ft_norm3(&stack_a);
-	// if (i == 1)
-	// 	return (1);
 	i = ft_lstsize(stack_a);
 	ft_norm4(i, &stack_a, &stack_b);
 	ft_push_original(&stack_a, &stack_b);
 }
-
-	// t_list	*current;
-	// current = stack_a;
-	// i = 1;
-	// while (i < ac)
-	// {
-	// 	while (current)
-	// 	{
-	// 		printf("%d\n", current->data);
-	// 		current = current->next;
-	// 	}	
-	// 	i++;
-	// }

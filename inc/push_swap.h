@@ -6,14 +6,13 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 16:36:20 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/06 02:20:50 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/06 04:04:51 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PUSH_SWAP_H
+#ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <stdlib.h>
-# include <stdio.h>
 # include <unistd.h>
 # include "get_next_line.h"
 
@@ -47,10 +46,12 @@ void	ft_push_twenty(t_list **stack_a, t_list **stack_b, int max, int chunk);
 int		ft_lstsize(t_list *lst);
 void	ft_push_another(t_list **stack_a, t_list **stack_b, int div);
 void	ft_push_original(t_list	**stack_a, t_list **stack_b);
+int		ft_strcmp(char *str1, char *str2);
 int		ft_if_sorted(t_list *stack_a);
 int		ft_if_sorted_bonus(t_list *stack_a, t_list *stack_b);
 void	ft_push_three(t_list **stack_a, int start);
 t_list	*ft_before_last(t_list *stack);
 void	ft_push_five(t_list **stack_a, t_list **stack_b);
+int		execute(t_list **stack_a, t_list **stack_b);
 
 #endif
