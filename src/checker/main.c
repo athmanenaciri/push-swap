@@ -6,12 +6,11 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:15:04 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/06 04:05:23 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/06 04:35:13 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "get_next_line.h"
 
 int	ft_norm1(int *ac, char **av)
 {
@@ -88,20 +87,14 @@ int	main(int ac, char **av)
 	t_list	*stack_a;
 	t_list	*stack_b;
 	int		nbr;
-	int		i;
 
 	stack_a = NULL;
 	stack_b = NULL;
-	i = ft_norm1(&ac, av);
-	if (i == 1)
+	if (ft_norm1(&ac, av)
+		|| ft_norm2(&ac, av, &nbr, &stack_a) || ft_norm3(&stack_a))
+		return (free(stack_a), 1);
+	if (execute(&stack_a, &stack_b) == 1)
 		return (1);
-	i = ft_norm2(&ac, av, &nbr, &stack_a);
-	if (i == 1)
-		return (1);
-	i = ft_norm3(&stack_a);
-	if (i == 1)
-		return (1);
-	execute(&stack_a, &stack_b);
 	if (ft_if_sorted_bonus(stack_a, stack_b) == 1)
 		write(1, "OK", 2);
 	else
