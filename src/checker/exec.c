@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 04:01:35 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/06 04:06:15 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/08 06:04:58 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	instra(char *inp, t_list **stack_a, t_list **stack_b)
 	else if (ft_strcmp(inp, "sb\n") == 0)
 		return (ft_swap_b(stack_b), 1);
 	else
-		return (write(2, "Error", 5), 0);
+		return (write(2, "Error\n", 6), 0);
 }
 
 int	execute(t_list **stack_a, t_list **stack_b)

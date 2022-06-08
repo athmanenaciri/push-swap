@@ -6,83 +6,78 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:08:14 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/07 04:06:08 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/08 05:25:31 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_find_big(t_list *stack_b, int *ptr, int pos)
+int	find_by_pos(t_list *stack_b, int pos)
 {
 	int	i;
-	int	j;
-	int	index;
 
 	i = 0;
-	j = 0;
-	index = stack_b->position;
 	while (stack_b)
 	{
-		if (stack_b->position > index && stack_b->position != pos)
-		{
-			index = stack_b->position;
-			i = j;
-		}
+		if (stack_b->position == pos)
+			return (i);
+		i++;
 		stack_b = stack_b->next;
-		j++;
 	}
-	*ptr = index;
+	return (-1);
+}
+
+int	ft_min(int a, int b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+int	ft_dis(t_list *stack, int pos)
+{
+	int	i;
+
+	i = ft_min(pos, (ft_lstsize(stack) - pos));
 	return (i);
 }
 
 void	push_to(t_list **stack_b, int pos, int i)
 {
-	while ((*stack_b)->position != pos)
-	{
-		if (i < ft_lstsize(*stack_b) / 2)
-		{
+	if (i < ft_lstsize(*stack_b) / 2)
+		while ((*stack_b)->position != pos)
 			ft_rotate_b(stack_b);
-		}
-		else
+	else
+		while ((*stack_b)->position != pos)
 			ft_r_rotate_b(stack_b);
-	}
-	
 }
-void	ft_tmp(int *i, int *j, int *index1, int *index2)
-{
-	int tmp;
 
-	tmp = *i;
-	*i = *j;
-	*j = tmp;
-	tmp = *index1;
-	*index1 = *index2;
-	*index2 = tmp;
-}
 void	ft_push_original(t_list **stack_a, t_list **stack_b)
 {
 	int	i;
 	int	j;
-	int	index1;
-	int	index2;
+	int	pos;
 
-	i = 0;
-	while (ft_lstsize(*stack_b))
+	pos = ft_lstsize(*stack_b);
+	while (pos > 0)
 	{
-		i = ft_find_big(*stack_b, &index1, -1);
-		j = ft_find_big(*stack_b, &index2, index1);
-		if(i < (ft_lstsize(stack_b) / 2) && j < (ft_lstsize(stack_b) / 2))
+		pos--;
+		i = find_by_pos(*stack_b, pos);
+		j = find_by_pos(*stack_b, pos - 1);
+		if (pos == 0 || ft_dis(*stack_b, i) < ft_dis(*stack_b, j))
 		{
-			if	(j < i)
-				ft_tmp(&i, &j, &index1, &index2);
+			push_to(stack_b, pos, i);
+			ft_push_a(stack_a, stack_b);
 		}
-		else if(i > (ft_lstsize(stack_b) / 2) && j > (ft_lstsize(stack_b) / 2))
+		else
 		{
-			if	(j > i)
-				ft_tmp(&i, &j, &index1, &index2);
+			push_to(stack_b, pos - 1, j);
+			ft_push_a(stack_a, stack_b);
+			i = find_by_pos(*stack_b, pos);
+			push_to(stack_b, pos, i);
+			pos--;
+			ft_push_a(stack_a, stack_b);
+			ft_swap_a(stack_a);
 		}
-		push_to(stack_b, index1, i);
-		push_to(stack_b, index2, j);
-		ft_push_a(stack_a, stack_b);
 	}
 }

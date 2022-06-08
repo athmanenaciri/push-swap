@@ -6,7 +6,7 @@
 #    By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/29 21:13:58 by anaciri           #+#    #+#              #
-#    Updated: 2022/06/06 04:17:36 by anaciri          ###   ########.fr        #
+#    Updated: 2022/06/08 05:54:17 by anaciri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ FILES_BONUS = checker/main checker/exec checker/get_next_line_utils checker/get_
 	instra_bonus/ft_r_rotate_a instra_bonus/ft_rotate_a instra_bonus/ft_swap_a ft_atoi \
 	ft_lstadd_front ft_lstlast ft_indexing ft_lstnew \
 	ft_repeat ft_lstadd_back ft_lstsize  ft_if_sorted\
-	instra_bonus/ft_if_sorted_bonus ft_push_three ft_before_last \
+	instra_bonus/ft_if_sorted_bonus ft_push_three ft_before_last ft_lstclear\
 	
 OBJS = $(addprefix $(DBUILD)/, $(FILES:=.o))
 
