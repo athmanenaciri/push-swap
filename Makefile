@@ -12,7 +12,7 @@
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra  -g
+CFLAGS = -Wall -Werror -Wextra
 DBUILD = build
 FILES = main instra/ft_push_a instra/ft_r_rotate_all instra/ft_rotate_all \
 	instra/ft_swap_all instra/ft_push_b instra/ft_r_rotate_b instra/ft_rotate_b \
