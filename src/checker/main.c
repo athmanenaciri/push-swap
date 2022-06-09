@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:15:04 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/08 05:52:34 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/08 20:10:18 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,8 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if(ac == 1)
-		return(ft_lstclear(&stack_a), 0);
+	if (ac == 1)
+		return (ft_lstclear(&stack_a), 0);
 	if (ft_norm1(&ac, av)
 		|| ft_norm2(&ac, av, &nbr, &stack_a) || ft_norm3(&stack_a))
 		return (ft_lstclear(&stack_a), 1);

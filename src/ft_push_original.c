@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:08:14 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/08 05:25:31 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/08 22:08:37 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,11 @@ int	find_by_pos(t_list *stack_b, int pos)
 	return (-1);
 }
 
-int	ft_min(int a, int b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
-
 int	ft_dis(t_list *stack, int pos)
 {
-	int	i;
-
-	i = ft_min(pos, (ft_lstsize(stack) - pos));
-	return (i);
+	if (pos < (ft_lstsize(stack) - pos))
+		return (pos);
+	return ((ft_lstsize(stack) - pos));
 }
 
 void	push_to(t_list **stack_b, int pos, int i)
@@ -50,6 +42,19 @@ void	push_to(t_list **stack_b, int pos, int i)
 	else
 		while ((*stack_b)->position != pos)
 			ft_r_rotate_b(stack_b);
+}
+
+void	push(t_list **stack_a, t_list **stack_b, int *pos, int j)
+{
+	int	i;
+
+	push_to(stack_b, *pos - 1, j);
+	ft_push_a(stack_a, stack_b);
+	i = find_by_pos(*stack_b, *pos);
+	push_to(stack_b, *pos, i);
+	(*pos)--;
+	ft_push_a(stack_a, stack_b);
+	ft_swap_a(stack_a);
 }
 
 void	ft_push_original(t_list **stack_a, t_list **stack_b)
@@ -70,14 +75,6 @@ void	ft_push_original(t_list **stack_a, t_list **stack_b)
 			ft_push_a(stack_a, stack_b);
 		}
 		else
-		{
-			push_to(stack_b, pos - 1, j);
-			ft_push_a(stack_a, stack_b);
-			i = find_by_pos(*stack_b, pos);
-			push_to(stack_b, pos, i);
-			pos--;
-			ft_push_a(stack_a, stack_b);
-			ft_swap_a(stack_a);
-		}
+			push(stack_a, stack_b, &pos, j);
 	}
 }
